@@ -3,7 +3,7 @@
 ## Introducción
 
 **OTW** es una Herramienta que permite la obtención automatizada de Información a través de Fuentes Abiertas, tomando como base la utilización de diferentes API’s proporcionadas por las fuentes de datos de mayor reputación y fiabilidad del mercado. Partiendo de un enfoque modular específicamente diseñado para mostrar información pertinente, permite al usuario interactuar con módulos que proporcionan información diferenciada a partir de un input de entrada único.
-Desarrollada en Python 3, la Versión Alpha de OTW está ideada para un uso ágil e intuitivo, con una presentación de resultados limpia y ordenada, a través de Línea de Comandos, si bien están previstas futuras versiones con implementación de Interfaz Web. 
+Desarrollada en Python 3, la Versión Alpha de OTW está ideada para un uso ágil e intuitivo, con una presentación de resultados limpia y ordenada, a través de Línea de Comandos.
 
 ## Scope
 
@@ -16,7 +16,7 @@ Desarrollada en Python 3, la Versión Alpha de OTW está ideada para un uso ági
 -	Modularidad: Más de 20 Módulos 
 -	Escalabilidad: Posibilidad de incorporar nuevos Módulos fácilmente
 -	Conexión mediante API’s con las plataformas OSINT de mayor prestigio del Mercado
--   Almecenamiento de API's en archivo "config.py"
+- Almecenamiento de API's en archivo "config.py"
 -	Resultados limpios, claros, concisos, filtrados y veraces
 -	Documentación detallada para cada uno de los Módulos
 
@@ -136,7 +136,7 @@ git clone https://github.com/McintProject/OTW.git
 ## Instalación
 
 ```
-cd OTWLinux
+cd OTW
 pip3 install -r requeriments.txt
 python3 otw.py
 ```
