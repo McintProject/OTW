@@ -113,11 +113,11 @@ Jorge Iturria Fernández de Pinedo – CONTACTO: pyproject@protonmail.com
 
 ## Descarga e Instalación
 
-git clone https://github.com/McintProject/OTW.git
+git clone https://github.com/McintProject/OTW.git 
 cd OTWLinux
 pip3 install -r requeriments.txt
 python3 otw.py
-Enjoy!!!
+Enjoy!
 
 ## Licencia
 
