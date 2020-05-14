@@ -111,9 +111,12 @@ BLOQUE NICKS & USERNAMES
 Isabel Muñoz Alfonso – 
 Jorge Iturria Fernández de Pinedo – CONTACTO: pyproject@protonmail.com
 
-## Descarga e Instalación
+## Descarga 
 
 git clone https://github.com/McintProject/OTW.git 
+
+## Instalación
+
 cd OTWLinux
 pip3 install -r requeriments.txt
 python3 otw.py
