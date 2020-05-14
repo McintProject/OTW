@@ -38,17 +38,17 @@ Desarrollada en Python 3, la Versión Alpha de OTW está ideada para un uso ági
 
 ## Inputs de Entrada admitidos
 
-IP
-Dominio
-URL
-Certificados SSL
-Hashes
-Transacciones / Direcciones de Bitcoin
-Emails
-Nombres de personas
-Nombres de Empresas
-Passwords, Números de teléfono
-Nombres de Usuario
+- IP
+- Dominio
+- URL
+- Certificados SSL
+- Hashes
+- Transacciones / Direcciones de Bitcoin
+- Emails
+- Nombres de personas
+- Nombres de Empresas
+- Passwords, Números de teléfono
+- Nombres de Usuario
 
 
 ## Usus y Funcionalidades 
