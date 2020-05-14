@@ -47,14 +47,52 @@ Desarrollada en Python 3, la Versión Alpha de OTW está ideada para un uso ági
   -[Creación de Cuenta y Generación de API_KEY](https://www.ibm.com/account/reg/us-en/signup?formid=urx-30243)
   
 - RiskIQ
+
+  -[Documentación API](https://api.passivetotal.org/index.html)
+
+  -[Creación de Cuenta y Generación de API_KEY](https://community.riskiq.com/registration/signupforfree?utm_content=riqcom&utm_term=register)
+  
 - Fraudguard
+
+  -[Documentación API](https://docs.fraudguard.io/)
+
+  -[Creación de Cuenta y Generación de API_KEY](https://app.fraudguard.io/register)
+  
 - Botscout
+
+  -[Documentación API](https://botscout.com/api.htm)
+
+  -[Creación de Cuenta y Generación de API_KEY](https://botscout.com/getkey.htm)
+  
 - Clearbit
+
+  -[Documentación API](https://clearbit.com/docs)
+
+  -[Creación de Cuenta y Generación de API_KEY](https://dashboard.clearbit.com/signup?)
+  
 - Dehased
+
+  -[Documentación API](https://www.dehashed.com/docs)
+
+  -[Creación de Cuenta y Generación de API_KEY](https://www.dehashed.com/register)
+  
 - Scylla
+
+  -[Documentación API](https://scylla.sh)
+
+  - Scylla es un Proyecto que alberga una considerable cantidad de "Data Leaks", desarrollado exclusivamente para Investigadores de Seguridad. En la actualidad, se encuentra disponible únicamente bajo autorización de su creador, Alejandro Cáceres. Para obtener las credenciales básicas de acceso a su API, podéis contactar con él vía Twitter: @_hyp3ri0n
+  
 - Libreborme
+
+  -[Documentación API](https://libreborme.readthedocs.io/es/latest/api/)
+
 - UserChecker
+
+  - No se hacen necesarias ni doumentación ni credenciales. Introducir un Nick y a buscar!
+
 - Blockchain.info
+
+  -[Documentación API](https://www.blockchain.com/es/api/blockchain_api)
 
 ## Inputs de Entrada admitidos
 
@@ -160,14 +198,14 @@ pip3 install -r requeriments.txt
 ```
 ## Uso 
 
-**OTW** requiere para su funcionamiento de la introducción de las API_KEY de cada uno de los Módulos, editando el archivo _"config.py"_, a excepción de los Módulos de BlockChain, LibreBorme y UserChecker, funcionales sin necesidad de credenciales. Todas las API_KEY  necesarias son Gratuías, a excepción del Módulo de _Dehased_. El acceso a las API_KEY de cada Módulo, así como a la documentación de cada API, los podeís encontrar en el Apartado **Módulos** de este README.
+**OTW** requiere para su funcionamiento de la introducción de las API_KEY de cada uno de los Módulos, editando el archivo _"config.py"_, a excepción de los Módulos de BlockChain, LibreBorme y UserChecker, funcionales sin necesidad de credenciales. **Todas las API_KEY  necesarias son Gratuítas**, a excepción del Módulo de _Dehased_. **El acceso a las API_KEY de cada Módulo, así como a la documentación de cada API, los podeís encontrar en el Apartado "Módulos" de este README**.
 
 Una vez introducidas las Claves de API, y dentro de la Carpeta OTW...
 
 ```
 otw.py
 ```
-... y a darle caña!
+... Rocks!
 
 ## Licencia
 
