@@ -23,7 +23,10 @@ Desarrollada en Python 3, la Versión Alpha de OTW está ideada para un uso ági
 ## Módulos 
 
 - Censys
-- Shodan
+- Shodan 
+[Documentación API] (https://developer.shodan.io/api)
+[Creación de Cuenta y Generación de API_KEY] (https://account.shodan.io/login)
+
 - Virus Total
 - IBM X-Force Exchange
 - RiskIQ
@@ -138,9 +141,12 @@ git clone https://github.com/McintProject/OTW.git
 ```
 cd OTW
 pip3 install -r requeriments.txt
-python3 otw.py
 ```
-Enjoy!
+## Uso 
+
+**OTW** requiere para su funcionamiento la introducción de las API_KEY de cada uno de los módulos editando el archivo _"config.py"_, a excepción de los Módulos de BlockChain, LibreBorme u UserChecker, funcionales sin necesidad de credenciales.
+
+## Genración de API_KEY
 
 ## Licencia
 
