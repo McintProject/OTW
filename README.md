@@ -7,7 +7,7 @@ Desarrollada en Python 3, la Versión Alpha de OTW está ideada para un uso ági
 
 ## Scope
 
-**OTW** es una Herramienta que puede ser utilizada tanto por Organizaciones que quieran conocer el grado de exposición de sus Sistemas y Tecnologías de la Información, como por Empresas de Ciberseguridad, Pentesters y Analistas de inteligencia, como punto de partida para la realización de Auditorías / Investigaciones. 
+**OTW** puede ser de utilidad tanto para Organizaciones que quieran conocer el grado de exposición de sus Sistemas y Tecnologías de la Información, como para Empresas de Ciberseguridad, Pentesters y Analistas de inteligencia, como punto de partida para la realización de Auditorías / Investigaciones. 
 
 ## Características técincas
 
