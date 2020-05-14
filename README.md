@@ -24,8 +24,10 @@ Desarrollada en Python 3, la Versión Alpha de OTW está ideada para un uso ági
 
 - Censys
 - Shodan 
-[Documentación API] (https://developer.shodan.io/api)
-[Creación de Cuenta y Generación de API_KEY] (https://account.shodan.io/login)
+
+[Documentación API](https://developer.shodan.io/api)
+
+[Creación de Cuenta y Generación de API_KEY](https://account.shodan.io/login)
 
 - Virus Total
 - IBM X-Force Exchange
