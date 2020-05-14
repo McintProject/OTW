@@ -23,6 +23,11 @@ Desarrollada en Python 3, la Versión Alpha de OTW está ideada para un uso ági
 ## Módulos 
 
 - Censys
+
+  -[Documentación API](https://censys.io/api)
+
+  -[Creación de Cuenta y Generación de API_KEY](https://censys.io/register)
+  
 - Shodan 
 
   -[Documentación API](https://developer.shodan.io/api)
@@ -30,7 +35,17 @@ Desarrollada en Python 3, la Versión Alpha de OTW está ideada para un uso ági
   -[Creación de Cuenta y Generación de API_KEY](https://account.shodan.io/login)
 
 - Virus Total
+
+  -[Documentación API](https://developers.virustotal.com/reference)
+
+  -[Creación de Cuenta y Generación de API_KEY](https://www.virustotal.com/gui/join-us)
+  
 - IBM X-Force Exchange
+
+  -[Documentación API](https://exchange.xforce.ibmcloud.com/api/doc/?)
+
+  -[Creación de Cuenta y Generación de API_KEY](https://www.ibm.com/account/reg/us-en/signup?formid=urx-30243)
+  
 - RiskIQ
 - Fraudguard
 - Botscout
@@ -129,26 +144,30 @@ BLOQUE NICKS & USERNAMES
 
 ## Autores 
 
-Isabel Muñoz Alfonso – 
-Jorge Iturria Fernández de Pinedo – CONTACTO: pyproject@protonmail.com
+Isabel Muñoz Alfonso 
 
-## Descarga 
+Jorge Iturria Fernández de Pinedo 
+
+CONTACTO: pyproject@protonmail.com
+
+## Descarga e Instalación
 
 ```
 git clone https://github.com/McintProject/OTW.git 
-```
-
-## Instalación
-
-```
 cd OTW
 pip3 install -r requeriments.txt
+
 ```
 ## Uso 
 
-**OTW** requiere para su funcionamiento la introducción de las API_KEY de cada uno de los módulos editando el archivo _"config.py"_, a excepción de los Módulos de BlockChain, LibreBorme u UserChecker, funcionales sin necesidad de credenciales.
+**OTW** requiere para su funcionamiento de la introducción de las API_KEY de cada uno de los Módulos, editando el archivo _"config.py"_, a excepción de los Módulos de BlockChain, LibreBorme y UserChecker, funcionales sin necesidad de credenciales. Todas las API_KEY  necesarias son Gratuías, a excepción del Módulo de _Dehased_. El acceso a las API_KEY de cada Módulo, así como a la documentación de cada API, los podeís encontrar en el Apartado **Módulos** de este README.
 
-## Genración de API_KEY
+Una vez introducidas las Claves de API, y dentro de la Carpeta OTW...
+
+```
+otw.py
+```
+... y a darle caña!
 
 ## Licencia
 
