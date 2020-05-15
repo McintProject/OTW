@@ -180,14 +180,6 @@ BLOQUE NICKS & USERNAMES
 -	Detección de Usuarios en Leaks de Información
 -	Detección de Bots
 
-## Autores 
-
-Isabel Muñoz Alfonso 
-
-Jorge Iturria Fernández de Pinedo 
-
-CONTACTO: pyproject@protonmail.com
-
 ## Descarga e Instalación
 
 ```
@@ -210,3 +202,11 @@ otw.py
 ## Licencia
 
 **OTW** se distribuye como Software Open Source con Licencia GNU V3, permitiendo al usuario adaptar el Código Fuente a sus propias necesidades, y pudiendo ser complementada con módulos adicionales, gracias a la escalabilidad en la que se ha basado su desarrollo.
+
+## Autores 
+
+Isabel Muñoz Alfonso 
+
+Jorge Iturria Fernández de Pinedo 
+
+CONTACTO: pyproject@protonmail.com
