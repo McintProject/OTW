@@ -205,7 +205,7 @@ otw.py
 
 ## Autores 
 
-Isabel Muñoz Alfonso 
+Isabel Muñoz
 
 Jorge Iturria Fernández de Pinedo 
 
