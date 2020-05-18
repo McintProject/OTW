@@ -205,8 +205,8 @@ otw.py
 
 ## Autores 
 
-Isabel Muñoz
-
 Jorge Iturria Fernández de Pinedo 
+
+Isabel M.A.
 
 CONTACTO: pyproject@protonmail.com
