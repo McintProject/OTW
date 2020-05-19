@@ -3,7 +3,7 @@
 # Purpose:      IBM XforceExchange module to retrieve Info & Reputation data for a Domain, 
 #               IP, URL or Hash (Malware Data)
 #              
-# Author:      Jorge Iturria 
+# Author:      Jorge I 
 # Contact:     pyproject@protonmail.com
 #
 # Created:     30/04/2020

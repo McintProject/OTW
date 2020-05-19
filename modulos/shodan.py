@@ -3,7 +3,7 @@
 # Purpose:      Shodan module to obtain information related about an IP:
 #               (ASN, ISP, Ports & Services, CVE's...)
 #
-# Author:      Jorge Iturria 
+# Author:      Jorge I
 #
 # Created:     30/04/2020
 # Copyright:   (c) Jorge iturria 2020

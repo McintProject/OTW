@@ -3,7 +3,7 @@
 # Purpose:      BlockchainInfo module to provide data on recent transactions & Wallets 
 #               in the Bitcoin Blockchain 
 #
-# Author:      Jorge Iturria 
+# Author:      Jorge I 
 # Contact:     pyproject@protonmail.com
 #
 # Created:     30/04/2020

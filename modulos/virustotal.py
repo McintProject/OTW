@@ -2,7 +2,7 @@
 # Name:         VirusTotalWrapper.py
 # Purpose:      Virus Total module to obtain information related about an IP, a Domain, an URL or a Hash
 #
-# Author:      Jorge Iturria 
+# Author:      Jorge I
 # Contact:     pyproject@protonmail.com
 #
 # Created:     30/04/2020

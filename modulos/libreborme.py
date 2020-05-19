@@ -3,7 +3,7 @@
 # Purpose:      Módulo LibreBorme para la búsqueda de Personas y Empresas
 #               inscritas en el Boletín Oficial del Registro Mercantil de España
 #              
-# Author:      Jorge Iturria 
+# Author:      Jorge I
 # Contact:     pyproject@protonmail.com
 #
 # Created:     30/04/2020

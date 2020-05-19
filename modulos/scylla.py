@@ -2,7 +2,7 @@
 # Name:         ScyllaWrapper.py
 # Purpose:      Scylla module to retrieve Info about Data leaks based on IP's & Passwords 
 #              
-# Author:      Jorge Iturria 
+# Author:      Jorge I
 # Contact:     pyproject@protonmail.com
 #
 # Created:     30/04/2020

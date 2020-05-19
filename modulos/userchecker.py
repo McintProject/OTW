@@ -3,7 +3,7 @@
 # Purpose:      UserCheck module to check if a Nick or UserName 
 #               exists in Mayor Social Network & Forums
 #              
-# Author:      Jorge Iturria 
+# Author:      Jorge I
 # Contact:     pyproject@protonmail.com
 #
 # Created:     30/04/2020

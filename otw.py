@@ -2,7 +2,7 @@
 # Name:         otw.py
 # Purpose:      Trabajo Fin de Master --- Ciberinteligencia ---
 #              
-# Author:      Jorge Iturria 
+# Author:      Jorge I
 # Contact:     pyproject@protonmail.com
 #
 # Created:     30/04/2020

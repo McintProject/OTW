@@ -2,7 +2,7 @@
 # Name:         CensysWrapper.py
 # Purpose:      Censys module to obtain information related about an IP, a Domain, or a Certificate
 #
-# Author:      Jorge Iturria 
+# Author:      Jorge I
 # Contact:     pyproject@protonmail.com
 #
 # Created:     30/04/2020

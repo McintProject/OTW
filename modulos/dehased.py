@@ -3,7 +3,7 @@
 # Purpose:      Dehased module to retrieve Info about Data Leaks based on Emails,
 #               Passwords, Usernames, Hashes or Phone Numbers
 #              
-# Author:      Jorge Iturria 
+# Author:      Jorge I
 # Contact:     pyproject@protonmail.com
 #
 # Created:     30/04/2020

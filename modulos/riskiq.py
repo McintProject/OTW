@@ -3,7 +3,7 @@
 # Purpose:      RiskIQ module to retrieve information related about 
 #                      a Domain, an IP, or a Certificate 
 #              
-# Author:      Jorge Iturria 
+# Author:      Jorge I 
 # Contact:     pyproject@protonmail.com
 #
 # Created:     30/04/2020

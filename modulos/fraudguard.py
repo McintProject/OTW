@@ -2,7 +2,7 @@
 # Name:         FraudGuardWrapper.py
 # Purpose:      Fraudguard module to retrieve IP reputation data for a specific IP 
 #
-# Author:      Jorge Iturria 
+# Author:      Jorge I
 # Contact:     pyproject@protonmail.com
 #
 # Created:     30/04/2020

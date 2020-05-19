@@ -2,7 +2,7 @@
 # Name:         BotScoutWrapper.py
 # Purpose:      BotScout module to identify automated web scripts, known as "Bots"
 #
-# Author:      Jorge Iturria 
+# Author:      Jorge I
 # Contact:     pyproject@protonmail.com
 #
 # Created:     30/04/2020

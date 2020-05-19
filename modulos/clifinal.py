@@ -2,7 +2,7 @@
 # Name:         ClearbitWrapper.py
 # Purpose:      Clearbit module to obtain information from People & Companies, based on an Email or a Domain 
 #
-# Author:      Jorge Iturria
+# Author:      Jorge I
 # Contact:     pyproject@protonmail.com 
 #
 # Created:     30/04/2020
