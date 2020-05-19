@@ -205,7 +205,7 @@ otw.py
 
 ## Autores 
 
-Jorge Iturria Fernández de Pinedo 
+Jorge I.
 
 Isabel M.A.
 
