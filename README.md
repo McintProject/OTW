@@ -7,7 +7,7 @@ Desarrollada en Python 3, la Versión Alpha de OTW está ideada para un uso ági
 
 ## Scope
 
-**OTW** es una Herramienta que puede ser utilizada tanto por Organizaciones que quieran conocer el grado de exposición de sus Sistemas y Tecnologías de la Información, como por Empresas de Ciberseguridad, Pentesters y Analistas de inteligencia, como punto de partida para la realización de Auditorías / Investigaciones. 
+**OTW** puede ser de utilidad tanto para Organizaciones que quieran conocer el grado de exposición de sus Sistemas y Tecnologías de la Información, como para Empresas de Ciberseguridad, Pentesters y Analistas de inteligencia, como punto de partida para la realización de Auditorías / Investigaciones. 
 
 ## Características técincas
 
@@ -180,14 +180,6 @@ BLOQUE NICKS & USERNAMES
 -	Detección de Usuarios en Leaks de Información
 -	Detección de Bots
 
-## Autores 
-
-Isabel Muñoz Alfonso 
-
-Jorge Iturria Fernández de Pinedo 
-
-CONTACTO: pyproject@protonmail.com
-
 ## Descarga e Instalación
 
 ```
@@ -210,3 +202,11 @@ otw.py
 ## Licencia
 
 **OTW** se distribuye como Software Open Source con Licencia GNU V3, permitiendo al usuario adaptar el Código Fuente a sus propias necesidades, y pudiendo ser complementada con módulos adicionales, gracias a la escalabilidad en la que se ha basado su desarrollo.
+
+## Autores 
+
+Jorge Iturria Fernández de Pinedo 
+
+Isabel M.A.
+
+CONTACTO: pyproject@protonmail.com
