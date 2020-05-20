@@ -62,6 +62,29 @@ Password = ""
 
 auth=(User, Password)
 
+# Ipinfo API
+IPINFO_API_KEY = ''
+
+# SecuriyTrails API
+SECURITYTRAILS_API_KEY = ''
+
+# FullContact API
+FULLCONTACT_API_KEY = ''
+
+# AlienVault API
+ALIENVAULT_API_KEY = ''
+
+# BuiltWith API
+BUILTWITH_API_KEY = ''
+
+# projecthoneypot.org API
+HONEYPOT_API_KEY = ''
+
+# Hunter.io API
+HUNTER_API_KEY = ''
+
+# OCCRP.ORG API
+OCCRP_API_KEY = ''
 
 
 
