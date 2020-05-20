@@ -1,10 +1,9 @@
-
 clearbit
-
 simplejson
-
 colorama
-
 urllib3
-
 httpbl
+urllib.request
+json
+httpbl
+requests
