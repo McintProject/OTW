@@ -2,7 +2,7 @@
 # Name:         otw.py
 # Purpose:      Trabajo Fin de Master --- Ciberinteligencia ---
 #              
-# Author:      Jorge I
+# Author:      Jorge Iturria 
 # Contact:     pyproject@protonmail.com
 #
 # Created:     30/04/2020
@@ -22,6 +22,14 @@ from modulos import dehased
 from modulos import blockchain
 from modulos import scylla
 from modulos import userchecker
+from modulos import ipinfo
+from modulos import securitytrails
+from modulos import fullcontact
+from modulos import alienvault
+from modulos import builtwith
+from modulos import honeypot
+from modulos import hunter
+from modulos import occrp
 
 from modulos import libreborme
 
@@ -33,6 +41,7 @@ import base64
 import sys
 import os
 import re
+import json
 
 desc = Fore.CYAN+ """
 
@@ -47,86 +56,78 @@ desc = Fore.CYAN+ """
 
 print (desc)
 
-print(Fore.WHITE+'''
---------------------------------------
------Selecciona el tipo de entrada----
---------------------------------------
+salir=False
 
-1) IP
-2) DOMINIO
-3) URL
-4) CERTIFICADOS
-5) HASH (Malware)
-6) TRANSACCIÓN / DIRECCIÓN BITCOIN
-7) EMAIL
-8) PERSONAS Y EMPRESAS
-9) NICKS & USERNAMES
-'''+Fore.RESET)
-print(Cursor.FORWARD(1))
+while(not salir):
 
-entrada = input(Fore.WHITE+'Seleccione el Input >> '+Fore.RESET)
+  print(Fore.WHITE+'''
+  --------------------------------------
+  -----Selecciona el tipo de entrada----
+  --------------------------------------
 
-if entrada == '1':
+  1) IP
+  2) DOMINIO
+  3) URL
+  4) CERTIFICADOS
+  5) HASH (Malware)
+  6) TRANSACCIÓN / DIRECCIÓN BITCOIN
+  7) EMAIL
+  8) PERSONAS Y EMPRESAS
+  9) NICKS & USERNAMES
+  10) TELEFONOS
+
+  0) SALIR
+
+  '''+Fore.RESET)
+  print("\n")
+
+  entrada = input(Fore.WHITE+'Seleccione el Input >> '+Fore.RESET)
+
+  if entrada == '1':
 
     print(Fore.WHITE+'''
-------------------------------------------
------Selecciona el Módulo a utilizar------
-------------------------------------------
+    ------------------------------------------
+    -----Selecciona el Módulo a utilizar------
+    ------------------------------------------
 
-A) SHODAN
-B) VIRUS TOTAL
-C) CENSYS
-D) IBM X-FORCE EXCHANGE
-E) RISKIQ
-F) FRAUDGUARD
-G) BOTSCOUT
-'''+Fore.RESET)
+    A) SHODAN
+    B) VIRUS TOTAL
+    C) CENSYS
+    D) IBM X-FORCE EXCHANGE
+    E) RISKIQ
+    F) FRAUDGUARD
+    G) BOTSCOUT
+    H) IPINFO
+    I) ALIENVAULT
+    J) HONEYPOT
+    '''+Fore.RESET)
 
     print(Cursor.FORWARD(1))
-
-    modulo = input(Fore.WHITE+'Seleccione su opción >> '+Fore.RESET)
-    
-    if modulo == 'A':
-
-        ip = input('Introduzca la IP >> ')
-
-        print(Cursor.FORWARD(1))
+    m = input(Fore.WHITE+'Seleccione su opción >> '+Fore.RESET)
+    modulo = m.upper()
+    print(Cursor.FORWARD(1))
         
+    if modulo == 'A':
+        ip = input('Introduzca la IP >> ')
         resultado_shodan = shodan.ip_f(config.SHODAN_API_KEY, ip)
 
     elif modulo == 'B':
-
         ip = input('Introduzca la IP >> ')
-
-        print(Cursor.FORWARD(1))
-
         resultado_virustotal = virustotal.vipm_f(config.VIRUS_TOTAL_API_KEY, ip)
 
     elif modulo == 'C':
-
         ip = input('Introduzca la IP >> ')
-
-        print(Cursor.FORWARD(1))
-
         resultado_censys = censys.cip_f(config.auth, ip)
 
     elif modulo == 'D':
-
         ip = input('Introduzca la IP >> ')
-
-        print(Cursor.FORWARD(1))
-
         resultado_xforce = xforce.xip_reputacion(config.auth, ip)
         resultado_xforce = xforce.xip_dns(config.auth, ip)
         resultado_xforce = xforce.xip_malware(config.auth, ip)
         resultado_xforce = xforce.xip_whois(config.auth, ip)
 
     elif modulo == 'E':
-
         ip = input('Introduzca la IP >> ')
-
-        print(Cursor.FORWARD(1))
-
         resultado_riskiq = riskiq.risk_ipe(config.auth, ip)
         resultado_riskiq = riskiq.risk_ipm(config.auth, ip)
         resultado_riskiq = riskiq.risk_ipo(config.auth, ip)
@@ -136,75 +137,70 @@ G) BOTSCOUT
         resultado_riskiq = riskiq.risk_ipwhois(config.auth, ip)
 
     elif modulo == 'F':
-
-        target = input('Introduzca la IP >> ')
-
-        print(Cursor.FORWARD(1))
-
-        resultado_fraudguard = fraudguard.ip_fraud(config.auth, target)
+        ip = input('Introduzca la IP >> ')
+        resultado_fraudguard = fraudguard.ip_fraud(config.auth, ip)
 
     elif modulo == 'G':
-
         ip = input('Introduzca la IP >> ')
-
-        print(Cursor.FORWARD(1))
-
         resultado_botscout = botscout.botip_f(config.BOTSCOUT_API_KEY, ip)
-        
+
+    elif modulo == 'H':
+        ip = input('Introduzca la IP >> ')
+        resultado_ipinfo = ipinfo.analyze(config.IPINFO_API_KEY, ip)
+        print(json.dumps(resultado_ipinfo,indent=2))
+
+    elif modulo == 'I':
+        ip = input('Introduzca la IP >> ')
+        resultado_alienvault = alienvault.ip(config.ALIENVAULT_API_KEY, ip)
+    
+    elif modulo == 'J':
+        ip = input('Introduzca la IP >> ')
+        resultado_honeypot = honeypot.analyze(config.HONEYPOT_API_KEY, ip)
+    
     else:
 
         print("Ninguna opción seleccionada. Lanze de nuevo el programa y seleccione una de entre las disponibles")
 
 
-elif entrada == '2':
+  elif entrada == '2':
 
     print(Fore.WHITE+'''
-------------------------------------------
------Selecciona el Módulo a utilizar------
-------------------------------------------
+    ------------------------------------------
+    -----Selecciona el Módulo a utilizar------
+    ------------------------------------------
 
-A) VIRUS TOTAL
-B) CENSYS
-C) IBM X-FORCE EXCHANGE
-D) RISKIQ
-E) CLEARBIT (Información sobre Empresas)
-'''+Fore.RESET)
+    A) VIRUS TOTAL
+    B) CENSYS
+    C) IBM X-FORCE EXCHANGE
+    D) RISKIQ
+    E) CLEARBIT (Información sobre Empresas)
+    F) SECURITYTRAILS
+    G) FULLCONTACT
+    H) ALIENVAULT
+    I) BUILTWITH
+    J) HUNTER
+    '''+Fore.RESET)
 
     print(Cursor.FORWARD(1))
-
-    modulo = input(Fore.WHITE+'Seleccione su opción >> '+Fore.RESET)
-
+    m = input(Fore.WHITE+'Seleccione su opción >> '+Fore.RESET)
+    modulo = m.upper()
+    print(Cursor.FORWARD(1))
+       
     if modulo == 'A':
-
         dominio = input('Introduzca el Dominio >> ')
-
-        print(Cursor.FORWARD(1))
-
         resultado_virustotal = virustotal.vdm_f(config.VIRUS_TOTAL_API_KEY, dominio)
 
     elif modulo == 'B':
-
-        domain = input('Introduzca el Dominio >> ')
-
-        print(Cursor.FORWARD(1))
-
-        resultado_censys = censys.cdm_f(config.auth, domain)
+        dominio = input('Introduzca el Dominio >> ')
+        resultado_censys = censys.cdm_f(config.auth, dominio)
 
     elif modulo == 'C':
-
-        domain = input('Introduzca el Dominio >> ')
-
-        print(Cursor.FORWARD(1))
-
-        resultado_xforce = xforce.domain_rep(config.auth, domain)
-        resultado_xforce = xforce.domain_whois(config.auth, domain)
+        dominio = input('Introduzca el Dominio >> ')
+        resultado_xforce = xforce.domain_rep(config.auth, dominio)
+        resultado_xforce = xforce.domain_whois(config.auth, dominio)
 
     elif modulo == 'D':
-
         dominio = input('Introduzca el Dominio >> ')
-
-        print(Cursor.FORWARD(1))
-
         resultado_riskiq = riskiq.risk_dme(config.auth, dominio)
         resultado_riskiq = riskiq.risk_dmm(config.auth, dominio )
         resultado_riskiq = riskiq.risk_dmo(config.auth, dominio )
@@ -214,38 +210,59 @@ E) CLEARBIT (Información sobre Empresas)
         resultado_riskiq = riskiq.risk_dmwhois(config.auth, dominio )
 
     elif modulo == 'E':
-
         dominio = input('Introduzca el Dominio >> ')
-
-        print(Cursor.FORWARD(1))
-
         resultado_clifinal = clifinal.cldomain_f(config.CLEARBIT_API_KEY, dominio)
+
+    elif modulo in ('F'):
+        dominio = input('Introduzca el Dominio >> ')
+        resultado_securitytrails = securitytrails.domain(config.SECURITYTRAILS_API_KEY, dominio)
+        print(json.dumps(resultado_securitytrails,indent=2))
+        resultado_securitytrails_sub = securitytrails.subdomain(config.SECURITYTRAILS_API_KEY, dominio)
+        print(json.dumps(resultado_securitytrails_sub,indent=2))
+     
+    elif modulo in ('G'):
+        dominio = input('Introduzca el Dominio >> ')
+        resultado_fullcontact = fullcontact.domain(config.FULLCONTACT_API_KEY, dominio)
+        print(json.dumps(resultado_fullcontact,indent=2))
+   
+    elif modulo in ('H'):
+        dominio = input('Introduzca el Dominio >> ')
+        resultado_alienvault = alienvault.domain(config.ALIENVAULT_API_KEY, dominio)
+
+    elif modulo in ('I'):
+        dominio = input('Introduzca el Dominio >> ')
+        resultado_builtwith = builtwith.analyze(config.BUILTWITH_API_KEY, dominio)
+        print(json.dumps(resultado_builtwith,indent=2))
+        
+    elif modulo in ('J'):
+        dominio = input('Introduzca el Dominio >> ')
+        resultado_hunter = hunter.analyce(config.HUNTER_API_KEY, dominio)
+        print(json.dumps(resultado_hunter,indent=2))
 
     else:
 
         print("Ninguna opción seleccionada. Lanze de nuevo el programa y seleccione una de entre las disponibles")
 
-elif entrada == '3':
+  elif entrada == '3':
 
     print(Fore.WHITE+'''
-------------------------------------------
------Selecciona el Módulo a utilizar------
-------------------------------------------
+  ------------------------------------------
+  -----Selecciona el Módulo a utilizar------
+  ------------------------------------------
 
-A) VIRUS TOTAL
-B) IBM X-FORCE EXCHANGE
-'''+Fore.RESET)
+  A) VIRUS TOTAL
+  B) IBM X-FORCE EXCHANGE
+  '''+Fore.RESET)
 
     print(Cursor.FORWARD(1))
 
-    modulo = input(Fore.WHITE+'Seleccione su opción >> '+Fore.RESET)
+    m = input(Fore.WHITE+'Seleccione su opción >> '+Fore.RESET)
+    modulo = m.upper()
 
     if modulo == 'A':
 
         resource = input('Introduzca la URL >> ')
-
         print(Cursor.FORWARD(1))
-
         resultado_virustotal = virustotal.url_f(config.VIRUS_TOTAL_API_KEY, resource)
 
     elif modulo == 'B':
@@ -262,20 +279,21 @@ B) IBM X-FORCE EXCHANGE
         
         print("Ninguna opción seleccionada. Lanze de nuevo el programa y seleccione una de entre las disponibles")
 
-elif entrada == '4':
+  elif entrada == '4':
 
     print(Fore.WHITE+'''
-------------------------------------------
------Selecciona el Módulo a utilizar------
-------------------------------------------
+  ------------------------------------------
+  -----Selecciona el Módulo a utilizar------
+  ------------------------------------------
 
-A) CENSYS
-B) RISQIK
-'''+Fore.RESET)
+  A) CENSYS
+  B) RISQIK
+  '''+Fore.RESET)
 
     print(Cursor.FORWARD(1))
 
-    modulo = input(Fore.WHITE+'Seleccione su opción >> '+Fore.RESET)
+    m = input(Fore.WHITE+'Seleccione su opción >> '+Fore.RESET)
+    modulo = m.upper()
 
     if modulo == 'A':
 
@@ -297,20 +315,21 @@ B) RISQIK
 
         print("Ninguna opción seleccionada. Lanze de nuevo el programa y seleccione una de entre las disponibles")
 
-elif entrada == '5':
+  elif entrada == '5':
 
     print(Fore.WHITE+'''
-------------------------------------------
------Selecciona el Módulo a utilizar------
-------------------------------------------
+  ------------------------------------------
+  -----Selecciona el Módulo a utilizar------
+  ------------------------------------------
 
-A) VIRUS TOTAL    
-B) IBM X-FORCE EXCHANGE
-'''+Fore.RESET)
+  A) VIRUS TOTAL    
+  B) IBM X-FORCE EXCHANGE
+  '''+Fore.RESET)
 
     print(Cursor.FORWARD(1))
 
-    modulo = input(Fore.WHITE+'Seleccione su opción >> '+Fore.RESET)
+    m = input(Fore.WHITE+'Seleccione su opción >> '+Fore.RESET)
+    modulo = m.upper()
 
     if modulo == 'A':
 
@@ -332,20 +351,21 @@ B) IBM X-FORCE EXCHANGE
 
         print("Ninguna opción seleccionada. Lanze de nuevo el programa y seleccione una de entre las disponibles")
 
-elif entrada == '6':
+  elif entrada == '6':
 
     print(Fore.WHITE+'''
-------------------------------------------
------Selecciona el Módulo a utilizar------
-------------------------------------------
+  ------------------------------------------
+  -----Selecciona el Módulo a utilizar------
+  ------------------------------------------
 
-A) TRANSACCIONES (BLOCKCHAIN.INFO)
-B) DIRECCIONES DE BITCOIN (BLOCKCHAIN.INFO)
-'''+Fore.RESET)
+  A) TRANSACCIONES (BLOCKCHAIN.INFO)
+  B) DIRECCIONES DE BITCOIN (BLOCKCHAIN.INFO)
+  '''+Fore.RESET)
 
     print(Cursor.FORWARD(1))
 
-    modulo = input(Fore.WHITE+'Seleccione su opción >> '+Fore.RESET)
+    m = input(Fore.WHITE+'Seleccione su opción >> '+Fore.RESET)
+    modulo = m.upper()
 
     if modulo == 'A':
 
@@ -367,23 +387,25 @@ B) DIRECCIONES DE BITCOIN (BLOCKCHAIN.INFO)
 
         print("Ninguna opción seleccionada. Lanze de nuevo el programa y seleccione una de entre las disponibles")
 
-elif entrada == '7':
+  elif entrada == '7':
 
     print(Fore.WHITE+'''
-------------------------------------------
------Selecciona el Módulo a utilizar------
-------------------------------------------
+  ------------------------------------------
+  -----Selecciona el Módulo a utilizar------
+  ------------------------------------------
 
-A) CLEARBIT (Información sobre Personas)
-B) DEHASED (Emails,Passwords, Usernames, Hashes o Números de Teléfono)
-C) BOTSCOUT (Bots)
-D) SCYLLA (Emails)
-E) SCYLLA (Passwords)
-'''+Fore.RESET)
+  A) CLEARBIT (Información sobre Personas)
+  B) DEHASED (Emails,Passwords, Usernames, Hashes o Números de Teléfono)
+  C) BOTSCOUT (Bots)
+  D) SCYLLA (Emails)
+  E) SCYLLA (Passwords)
+  F) FULLCONTACT
+  '''+Fore.RESET)
 
     print(Cursor.FORWARD(1))
 
-    modulo = input(Fore.WHITE+'Seleccione su opción >> '+Fore.RESET)
+    m = input(Fore.WHITE+'Seleccione su opción >> '+Fore.RESET)
+    modulo = m.upper()
 
     if modulo == 'A':
 
@@ -425,35 +447,41 @@ E) SCYLLA (Passwords)
 
         resultado_scylla = scylla.scylla_pass(config.auth, contraseña)
         
+    elif modulo == 'F':
+        email = input('Introduzca el Email >> ')
+        resultado_fullcontact = fullcontact.email(config.FULLCONTACT_API_KEY, email)
+        print(json.dumps(resultado_fullcontact,indent=2))   
+
     else:
             
         print("Ninguna opción seleccionada. Lanze de nuevo el programa y seleccione una de entre las disponibles")
 
-elif entrada == '8':
-
+  elif entrada == '8':
+ 
     print(Fore.WHITE+'''
-------------------------------------------
------Selecciona el Módulo a utilizar------
-------------------------------------------
+  ------------------------------------------
+  -----Selecciona el Módulo a utilizar------
+  ------------------------------------------
 
-A) CLEARBIT (Personas a través de un email)
-B) CLEARBIT (Empresas a través de un Dominio)
-C) LIBREBORME (Búsqueda de Personas)
-D) LIBREBORME (Búsqueda de Empresas)
-E) LIBREBORME (Información sobre Personas)
-F) LIBREBORME (Información sobre Empresas)
-'''+Fore.RESET)
+  A) CLEARBIT (Personas a través de un email)
+  B) CLEARBIT (Empresas a través de un Dominio)
+  C) LIBREBORME (Búsqueda de Personas)
+  D) LIBREBORME (Búsqueda de Empresas)
+  E) LIBREBORME (Información sobre Personas)
+  F) LIBREBORME (Información sobre Empresas)
+  G) OCCRP (Información sobre Personas)
+  H) OCCRP (Información sobre Empresas)
+  '''+Fore.RESET)
 
     print(Cursor.FORWARD(1))
 
-    modulo = input(Fore.WHITE+'Seleccione su opción >> '+Fore.RESET)
+    m = input(Fore.WHITE+'Seleccione su opción >> '+Fore.RESET)
+    modulo=m.upper()
 
     if modulo == 'A':
 
         email = input('Introduzca el Email de la Persona >> ')
-
         print(Cursor.FORWARD(1))
-
         resultado_clifinal = clifinal.clemail_f(config.CLEARBIT_API_KEY, email)
 
     elif modulo == 'B':
@@ -475,11 +503,8 @@ F) LIBREBORME (Información sobre Empresas)
     elif modulo == 'D':
 
         empresa = input('Introduzca el Nombre de la Empresa a buscar >> ')
-
         print(Cursor.FORWARD(1))
-
         resultado_libreborme = libreborme.search_companies(empresa)
-
 
     elif modulo == 'E':
 
@@ -496,30 +521,40 @@ F) LIBREBORME (Información sobre Empresas)
     elif modulo == 'F':
 
         empresa = input('Introduzca el Nombre de la Empresa a Investigar >> ')
-
         print(Cursor.FORWARD(1))
-
         resultado_libreborme = libreborme.empresas(empresa)
+    
+    elif modulo == 'G':
+        person = input('Introduzca el nombre de la persona a buscar >> ')
+        resultado_occrp_person = occrp.person(config.OCCRP_API_KEY, person)
+        print(json.dumps(resultado_occrp_person,indent=2))
+        
+    elif modulo == 'H':
 
+        entidad = input('Introduzca el nombre de la empresa a buscar >> ')
+        resultado_occrp_company = occrp.company(config.OCCRP_API_KEY, entidad)
+        print(json.dumps(resultado_occrp_company,indent=2))
+    
     else:
 
         print("Ninguna opción seleccionada. Lanze de nuevo el programa y seleccione una de entre las disponibles")
 
-elif entrada == '9':
+  elif entrada == '9':
 
     print(Fore.WHITE+'''
-------------------------------------------
------Selecciona el Módulo a utilizar------
-------------------------------------------
+  ------------------------------------------
+  -----Selecciona el Módulo a utilizar------
+  ------------------------------------------
 
-A) USERCHECKER (Nicks, Usernames)
-B) DEHASED (Emails,Passwords, Usernames, Hashes o Números de Teléfono)
-C) BOTSCOUT (Bots)
-'''+Fore.RESET)
+  A) USERCHECKER (Nicks, Usernames)
+  B) DEHASED (Emails,Passwords, Usernames, Hashes o Números de Teléfono)
+  C) BOTSCOUT (Bots)
+  '''+Fore.RESET)
 
     print(Cursor.FORWARD(1))
 
-    modulo = input(Fore.WHITE+'Seleccione su opción >> '+Fore.RESET)
+    m = input(Fore.WHITE+'Seleccione su opción >> '+Fore.RESET)
+    modulo = m.upper()
 
     if modulo == 'A':
 
@@ -540,7 +575,6 @@ C) BOTSCOUT (Bots)
         target = input('Introduzca el Username / Nick  >> ')
 
         print(Cursor.FORWARD(1))
-
         resultado_dehased = dehased.dehas_f(config.auth, target)
 
     elif modulo == 'C':
@@ -555,8 +589,34 @@ C) BOTSCOUT (Bots)
 
         print("Ninguna opción seleccionada. Lanze de nuevo el programa y seleccione una de entre las disponibles")
 
-else:
+  elif entrada == '10':
 
+    print(Fore.WHITE+'''
+  ------------------------------------------
+  -----Selecciona el Módulo a utilizar------
+  ------------------------------------------
+
+  A) FULLCONTACT
+
+  '''+Fore.RESET)
+
+    print(Cursor.FORWARD(1))
+    m = input(Fore.WHITE+'Seleccione su opción >> '+Fore.RESET)
+    modulo = m.upper()
+    print(Cursor.FORWARD(1))
+    
+    if modulo == 'A':
+        phone = input('Introduzca el número de telefono (formato +34686456789) >> ')
+        resultado_fullcontact = fullcontact.phone(config.FULLCONTACT_API_KEY, phone)
+        print(json.dumps(resultado_fullcontact,indent=2))
+    
+    else:
+        print("Ninguna opción seleccionada. Lanze de nuevo el programa y seleccione una de entre las disponibles")
+
+  elif entrada == '0':
+    salir=True
+
+  else:
     print("Ninguna opción seleccionada. Lanze de nuevo el programa y seleccione una de entre las disponibles")
 
 
