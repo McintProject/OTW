@@ -2,11 +2,11 @@
 # Name:         otw.py
 # Purpose:      Trabajo Fin de Master --- Ciberinteligencia ---
 #              
-# Author:      Jorge Iturria 
+# Author:      Jorge I 
 # Contact:     pyproject@protonmail.com
 #
 # Created:     30/04/2020
-# Copyright:   Copyright (C) 2020 - Isabel Muñoz & Jorge Iturria
+# Copyright:   Copyright (C) 2020 - Isabel M.A & Jorge I
 # Licence:     GNU V3
 # -----------------------------------------------------------------------------
 from modulos import config
