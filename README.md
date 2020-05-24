@@ -93,6 +93,57 @@ Desarrollada en Python 3, la Versión Alpha de OTW está ideada para un uso ági
 - Blockchain.info
 
   -[Documentación API](https://www.blockchain.com/es/api/blockchain_api)
+  
+- Security Trails
+ 
+   -[Documentación API](https://docs.securitytrails.com/docs)
+
+   -[Creación de Cuenta y Generación de API_KEY](https://dash.readme.io/to/securitytrails/signup)
+  
+ - Hunter.io
+ 
+   -[Documentación API](https://hunter.io/api-documentation/v2#domain-search)
+
+   -[Creación de Cuenta y Generación de API_KEY](https://hunter.io/users/sign_up)
+  
+- OCCRP
+ 
+   -[Documentación API](https://redocly.github.io/redoc/?url=https://aleph.occrp.org/api/openapi.json#tag/Entity/paths/~1api~12~1entities/get)
+   
+- FullContact
+ 
+   -[Documentación API](https://dashboard.fullcontact.com/api-ref#home)
+
+   -[Creación de Cuenta y Generación de API_KEY](https://dashboard.fullcontact.com/register)
+   
+- Honeypot Checker
+ 
+   -[Documentación API](https://www.projecthoneypot.org/httpbl_api.php)
+
+   -[Creación de Cuenta y Generación de API_KEY](https://www.projecthoneypot.org/create_account.php)
+   
+- Ip Info
+ 
+   -[Documentación API](https://ipinfo.io/developers#json-response)
+
+   -[Creación de Cuenta y Generación de API_KEY](https://ipinfo.io/signup)
+   
+- BuiltWith
+ 
+   -[Documentación API](https://api.builtwith.com/free-api)
+
+   -[Creación de Cuenta y Generación de API_KEY](https://builtwith.com/signup)
+   
+- Alien Vault OTX
+ 
+   -[Documentación API](https://otx.alienvault.com/api)
+
+   -[Creación de Cuenta y Generación de API_KEY](https://otx.alienvault.com/)
+  
+
+
+ 
+ 
 
 ## Inputs de Entrada admitidos
 
